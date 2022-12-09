@@ -179,7 +179,7 @@
             transition: background-color 100ms ease-in-out, transform 200ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
         }
 
-        #bmain {
+        #Button1 {
             width: 40%;
         }
 
@@ -229,24 +229,24 @@
         <h2 class="name">Krunal Rana</h2>
         <div class="title">" शीलंम् परम भूषणं "</div>
         <div class="desc">
-            <p> Morgan has collected ants since they were six years old and now has many dozen ants but none in their
-                pants.</p>
+            <p style="text-align: center;"> Hi there, <b>Krunal Rana </b> here,<br><br> I'm Python Developer | Photographer | Freelancer & Long range Shooter <br>  For know more  about my Work <br> Join me @My Social Handles   </p>
         </div>
         <div class="actions">
             <br>
             <div class="follow-btn">
-                <button id="bmain" style="float: right; "> WhatsApp</button>&nbsp;
-                <button id="b1"><i class="fab fa-linkedin-in"></i></button>&nbsp;
-                <button id="b2"><a href="tel:5558920234" style="text-decoration: none; "
-                        onclick="ga('send', 'event', { eventCategory: 'Contact', eventAction: 'Call', eventLabel: 'Mobile Button'});"><i
-                            class="fas fa-phone-volume"></i></a></button>&nbsp;
-                <button id="b3"><i class="fab fa-instagram"></i></button>
+                <button id="Button1" type="button" value="Click" onclick="switchVisible();" style="float: right; "> WhatsApp</button>&nbsp;
+                <!-- <input /> -->
+                <a href="https://www.linkedin.com/in/krunal-rana/"><button id="b1"><i class="fab fa-linkedin-in"></i></button></a>&nbsp;
+                <a href="tel:+919824085934" style="text-decoration: none; "
+                        onclick="ga('send', 'event', { eventCategory: 'Contact', eventAction: 'Call', eventLabel: 'Mobile Button'});"><button id="b2"><i
+                            class="fas fa-phone-volume"></i></button></a>&nbsp;
+                <a href="https://www.instagram.com/ranakrunal2704/"><button id="b3"><i class="fab fa-instagram"></i></button></a>
             </div><br>
             <div class="follow-info">
                 <h2 style="text-align: center;"><a href="#"><small>wwww.krunalrana.site</small><small></small></a></h2>
                 <h2 style="text-align: center;"><a href="#"><small class="website-counter"></small></a></h2>
             </div>
-            <input id="Button1" type="button" value="Click" onclick="switchVisible();" />
+            
         </div>
     </div>
     </div>
@@ -265,11 +265,11 @@
             <h2 class="name">Krunal Rana</h2>
             <div class="title">" शीलंम् परम भूषणं "</div>
             <div class="desc">
-                <p> Morgan has collected ants since they were six years old and now has many dozen ants but none in
-                    their pants.</p>
+                <img src="https://dyvak8rtbn5om.cloudfront.net/wp-content/uploads/2022/01/website-under-construction-1.jpg" alt="" >
             </div>
         </div>
     </div>
+    
     </div>
 
 
@@ -282,6 +282,7 @@
     <script>
         var counterContainer = document.querySelector(".website-counter");
         var resetButton = document.querySelector("#reset");
+        // visitCount = 10124
         var visitCount = localStorage.getItem("page_view");
 
         // Check if page_view entry is present
