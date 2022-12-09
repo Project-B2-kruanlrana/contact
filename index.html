@@ -1,205 +1,320 @@
-
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>CodePen - Fairly Colourful Profile Card</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<link rel="stylesheet" href="./style.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-<style>
-    @import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
-body {
-  font-size: 16px;
-  color: #404040;
-  font-family: Montserrat, sans-serif;
-  background-image: linear-gradient(to bottom right, #ff9eaa 0% 65%, #e860ff 95% 100%);
-  background-position: center;
-  background-attachment: fixed;
-  margin: 0;
-  padding: 2rem 0;
-  display: grid;
-  place-items: center;
-  box-sizing: border-box;
-}
-.card {
-  background-color: #fff;
-  max-width: 360px;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  border-radius: 2rem;
-  box-shadow: 0px 1rem 1.5rem rgba(0,0,0,0.5);
-}
-.card .banner {
-  background-image: url("https://media-exp1.licdn.com/dms/image/C4E16AQGKa2YBRQsz8g/profile-displaybackgroundimage-shrink_350_1400/0/1644646130919?e=1675900800&v=beta&t=Z64huJE6PkJVul6TF7n1GsmNDASvFHwPgSE-7uRizcQ");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 11rem;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  box-sizing: border-box;
-}
-.card .banner svg {
-  background-color: #fff;
-  width: 8rem;
-  height: 8rem;
-  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.3);
-  border-radius: 50%;
-  transform: translateY(50%);
-  transition: transform 200ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
-}
-.card .banner svg:hover {
-  transform: translateY(50%) scale(1.3);
-}
-.card .menu {
-  width: 100%;
-  height: 5.5rem;
-  padding: 1rem;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
-  position: relative;
-  box-sizing: border-box;
-}
-.card .menu .opener {
-  width: 2.5rem;
-  height: 2.5rem;
-  position: relative;
-  border-radius: 50%;
-  transition: background-color 100ms ease-in-out;
-}
-.card .menu .opener:hover {
-  background-color: #f2f2f2;
-}
-.card .menu .opener span {
-  background-color: #404040;
-  width: 0.4rem;
-  height: 0.4rem;
-  position: absolute;
-  top: 0;
-  left: calc(50% - 0.2rem);
-  border-radius: 50%;
-}
-.card .menu .opener span:nth-child(1) {
-  top: 0.45rem;
-}
-.card .menu .opener span:nth-child(2) {
-  top: 1.05rem;
-}
-.card .menu .opener span:nth-child(3) {
-  top: 1.65rem;
-}
-.card h2.name {
-  text-align: center;
-  padding: 0 2rem 0.5rem;
-  margin: 0;
-}
-.card .title {
-  color: #a0a0a0;
-  font-size: 0.85rem;
-  text-align: center;
-  padding: 0 2rem 1.2rem;
-}
-.card .actions {
-  padding: 0 2rem 1.2rem;
-  display: flex;
-  flex-direction: column;
-  order: 99;
-}
-.card .actions .follow-info {
-  padding: 0 0 1rem;
-  display: flex;
-}
-.card .actions .follow-info h2 {
-  text-align: center;
-  width: 50%;
-  margin: 0;
-  box-sizing: border-box;
-}
-.card .actions .follow-info h2 a {
-  text-decoration: none;
-  padding: 0.8rem;
-  display: flex;
-  flex-direction: column;
-  border-radius: 0.8rem;
-  transition: background-color 100ms ease-in-out;
-}
-.card .actions .follow-info h2 a span {
-  color: #1c9eff;
-  font-weight: bold;
-  transform-origin: bottom;
-  transform: scaleY(1.3);
-  transition: color 100ms ease-in-out;
-}
-.card .actions .follow-info h2 a small {
-  color: #afafaf;
-  font-size: 0.85rem;
-  font-weight: normal;
-}
-.card .actions .follow-info h2 a:hover {
-  background-color: #f2f2f2;
-}
-.card .actions .follow-info h2 a:hover span {
-  color: #007ad6;
-}
-.card .actions .follow-btn button {
-  color: inherit;
-  font: inherit;
-  font-weight: bold;
-  background-color: #ffd01a;
-  width: 100%;
-  border: none;
-  padding: 1rem;
-  outline: none;
-  box-sizing: border-box;
-  border-radius: 1.5rem/50%;
-  transition: background-color 100ms ease-in-out, transform 200ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
-}
-.card .actions .follow-btn button:hover {
-  background-color: #efb10a;
-  transform: scale(1.1);
-}
-.card .actions .follow-btn button:active {
-  background-color: #e8a200;
-  transform: scale(1);
-}
-.card .desc {
-  text-align: justify;
-  padding: 0 2rem 2.5rem;
-  order: 100;
-}
+<html lang="en">
 
-</style>
+<head>
+    <meta charset="UTF-8">
+    <title>CodePen - Fairly Colourful Profile Card</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+
+        body {
+            font-size: 16px;
+            color: #404040;
+            font-family: Montserrat, sans-serif;
+            background-image: linear-gradient(to bottom right, #ff9eaa 0% 65%, #e860ff 95% 100%);
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 2rem 0;
+            display: grid;
+            place-items: center;
+            box-sizing: border-box;
+        }
+
+        #Div2 {
+            display: none;
+        }
+
+        .card {
+            background-color: #fff;
+            max-width: 380px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border-radius: 2rem;
+            box-shadow: 0px 1rem 1.5rem rgba(0, 0, 0, 0.5);
+        }
+
+        .card .banner {
+            background-image: url("https://media-exp1.licdn.com/dms/image/C4E16AQGKa2YBRQsz8g/profile-displaybackgroundimage-shrink_350_1400/0/1644646130919?e=1675900800&v=beta&t=Z64huJE6PkJVul6TF7n1GsmNDASvFHwPgSE-7uRizcQ");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 11rem;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+
+        .card .banner svg {
+            background-color: #fff;
+            width: 8rem;
+            height: 8rem;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            transform: translateY(50%);
+            transition: transform 200ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+        }
+
+        .card .banner svg:hover {
+            transform: translateY(50%) scale(1.3);
+        }
+
+        .card .menu {
+            width: 100%;
+            height: 5.5rem;
+            padding: 1rem;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-end;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        .card .menu .opener {
+            width: 2.5rem;
+            height: 2.5rem;
+            position: relative;
+            border-radius: 50%;
+            transition: background-color 100ms ease-in-out;
+        }
+
+        .card .menu .opener:hover {
+            background-color: #f2f2f2;
+        }
+
+        .card .menu .opener span {
+            width: 0.4rem;
+            height: 0.4rem;
+            position: absolute;
+            top: 0;
+            left: calc(50% - 0.2rem);
+        }
+
+        .card .menu .opener span:nth-child(1) {
+            top: 0.5rem;
+        }
+
+        .card h2.name {
+            text-align: center;
+            padding: 0 2rem 0.5rem;
+            margin: 0;
+        }
+
+        .card .title {
+            color: #a0a0a0;
+            font-size: 0.85rem;
+            text-align: center;
+            padding: 0 2rem 1.2rem;
+        }
+
+        .card .actions {
+            padding: 0 2rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            order: 98;
+        }
+
+        .card .actions .follow-info {
+            padding: 0 0 1rem;
+            display: flex;
+        }
+
+        .card .actions .follow-info h2 {
+            text-align: center;
+            width: 52%;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .card .actions .follow-info h2 a {
+            text-decoration: none;
+            padding: 0.8rem;
+            display: flex;
+            flex-direction: column;
+            border-radius: 0.8rem;
+            transition: background-color 100ms ease-in-out;
+        }
+
+        .card .actions .follow-info h2 a span {
+            color: #1c9eff;
+            font-weight: bold;
+            transform-origin: bottom;
+            transform: scaleY(1.3);
+            transition: color 100ms ease-in-out;
+        }
+
+        .card .actions .follow-info h2 a small {
+            color: #afafaf;
+            font-size: 0.85rem;
+            font-weight: normal;
+        }
+
+        .card .actions .follow-info h2 a:hover {
+            background-color: #f2f2f2;
+        }
+
+        .card .actions .follow-info h2 a:hover span {
+            color: #007ad6;
+        }
+
+        .card .actions .follow-btn button {
+            color: inherit;
+            font: inherit;
+            font-weight: bold;
+            background-color: #ffd01a;
+            /* width: 48%; */
+            border: none;
+            padding: 1rem;
+            outline: none;
+            box-sizing: border-box;
+            border-radius: 0.2rem;
+            transition: background-color 100ms ease-in-out, transform 200ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+        }
+
+        #bmain {
+            width: 40%;
+        }
+
+        #b1,
+        #b2,
+        #b3 {
+            width: 16.5%;
+        }
+
+        .card .actions .follow-btn button:hover {
+            background-color: #efb10a;
+            transform: scale(1.1);
+        }
+
+        .card .actions .follow-btn button:active {
+            background-color: #e8a200;
+            transform: scale(1);
+        }
+
+        .card .desc {
+            text-align: justify;
+            padding: 0 2rem 0rem 2.5rem;
+            order: 95;
+        }
+
+        #counter {
+            height: 10px;
+            width: 12px;
+        }
+    </style>
 </head>
+
 <body>
-<!-- partial:index.partial.html -->
-<div class="card">
-  <div class="banner">    
-    <svg viewBox="">
-        <image href="https://avatars.githubusercontent.com/u/90046525?v=4"  />
-    </svg>
-  </div>
-  <div class="menu">
-    <div class="opener"><span></span><span></span><span></span></div>
-  </div>
-  <h2 class="name">Krunal Rana</h2>
-  <div class="title">" शीलंम् परम भूषणं "</div>
-  <div class="actions">
-    <div class="follow-info">
-      <h2><a href="#"><span>12</span><small>Followers</small></a></h2>
-      <h2><a href="#"><span>1000</span><small>Following</small></a></h2>
+    <!-- partial:index.partial.html -->
+    <div id="Div1">
+    <div class="card">
+        <div class="banner">
+            <svg viewBox="">
+                <image href="https://avatars.githubusercontent.com/u/90046525?v=4" />
+            </svg>
+        </div>
+        <div class="menu">
+            <div class="opener">
+                <span><b>:)</b></span>
+            </div>
+        </div>
+        <h2 class="name">Krunal Rana</h2>
+        <div class="title">" शीलंम् परम भूषणं "</div>
+        <div class="desc">
+            <p> Morgan has collected ants since they were six years old and now has many dozen ants but none in their
+                pants.</p>
+        </div>
+        <div class="actions">
+            <br>
+            <div class="follow-btn">
+                <button id="bmain" style="float: right; "> WhatsApp</button>&nbsp;
+                <button id="b1"><i class="fab fa-linkedin-in"></i></button>&nbsp;
+                <button id="b2"><a href="tel:5558920234" style="text-decoration: none; "
+                        onclick="ga('send', 'event', { eventCategory: 'Contact', eventAction: 'Call', eventLabel: 'Mobile Button'});"><i
+                            class="fas fa-phone-volume"></i></a></button>&nbsp;
+                <button id="b3"><i class="fab fa-instagram"></i></button>
+            </div><br>
+            <div class="follow-info">
+                <h2 style="text-align: center;"><a href="#"><small>wwww.krunalrana.site</small><small></small></a></h2>
+                <h2 style="text-align: center;"><a href="#"><small class="website-counter"></small></a></h2>
+            </div>
+            <input id="Button1" type="button" value="Click" onclick="switchVisible();" />
+        </div>
     </div>
-    <div class="follow-btn">
-      <button>Follow</button>
     </div>
-  </div>
-  <div class="desc">Morgan has collected ants since they were six years old and now has many dozen ants but none in their pants.</div>
-</div>
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js'></script>
+    <div id="Div2">
+        <div class="card">
+            <div class="banner">
+                <svg viewBox="">
+                    <image href="https://avatars.githubusercontent.com/u/90046525?v=4" />
+                </svg>
+            </div>
+            <div class="menu">
+                <div class="opener">
+                    <span><b>:)</b></span>
+                </div>
+            </div>
+            <h2 class="name">Krunal Rana</h2>
+            <div class="title">" शीलंम् परम भूषणं "</div>
+            <div class="desc">
+                <p> Morgan has collected ants since they were six years old and now has many dozen ants but none in
+                    their pants.</p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js'></script>
+    <script>
+        var counterContainer = document.querySelector(".website-counter");
+        var resetButton = document.querySelector("#reset");
+        var visitCount = localStorage.getItem("page_view");
+
+        // Check if page_view entry is present
+        if (visitCount) {
+            visitCount = Number(visitCount) + 1;
+            localStorage.setItem("page_view", visitCount);
+        } else {
+            visitCount = 1;
+            localStorage.setItem("page_view", 1);
+        }
+        counterContainer.innerHTML = visitCount;
+
+        // Adding onClick event listener
+        resetButton.addEventListener("click", () => {
+            visitCount = 1;
+            localStorage.setItem("page_view", 1);
+            counterContainer.innerHTML = visitCount;
+        });
+
+        function switchVisible() {
+            if (document.getElementById('Div1')) {
+
+                if (document.getElementById('Div1').style.display == 'none') {
+                    document.getElementById('Div1').style.display = 'block';
+                    document.getElementById('Div2').style.display = 'none';
+                }
+                else {
+                    document.getElementById('Div1').style.display = 'none';
+                    document.getElementById('Div2').style.display = 'block';
+                }
+            }
+        }
+    </script>
 </body>
+
 </html>
